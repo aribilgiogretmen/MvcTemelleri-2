@@ -1,0 +1,26 @@
+﻿@model Person
+
+<form method="post" asp-action="Person">
+
+    <div class="form-group">
+
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" id="firstname" type="text" class="form-control"/>
+
+    </div>
+
+    <button type="submit" class="btn btn-success mt-5">Gönder</button>
+
+
+
+</form>
+
+@if (!string.IsNullOrEmpty(Model.LastName))
+{
+    <div class="alert alert-success mt-5">
+
+        @Model.FirstName + @Model.LastName
+
+    </div>
+
+}

@@ -14,6 +14,29 @@ namespace MvcTemelleri_2.Controllers
             _logger = logger;
         }
 
+
+        public IActionResult Person()
+        {
+
+
+
+            return View(new Person());
+        }
+
+        [HttpPost]
+        public IActionResult Person(Person model)
+        {
+
+            if (ModelState.IsValid && !string.IsNullOrEmpty(model.FirstName))
+            {
+                model.LastName = "Alpak";
+                return View("Person", model);
+
+            }
+
+            return View("Person", model);
+        }
+
         public IActionResult Index()
         {
             
