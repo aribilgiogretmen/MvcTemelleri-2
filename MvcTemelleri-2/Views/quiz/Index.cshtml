@@ -1,0 +1,26 @@
+﻿<h2>Quiz Uygulamama Hoş geldiniz</h2>
+
+<p>@ViewData["Question"]</p>
+
+<form method="post">
+
+    <div class="form-group">
+
+   
+        <label class="form-control" for="userAnswer">Cevabınız: </label>
+        <input class="form-control"  type="text" id="userAnswer" name="userAnswer" required />
+        <button class="btn btn-success" type="submit">Cevapla</button>
+
+    </div>
+
+</form>
+
+@if(ViewData["Result"]!=null)
+{
+    <p>@ViewData["Result"]</p>
+}
+
+@if (ViewData["userAnswer"]!=null)
+{
+    <p>Sizin Cevabınız: @ViewData["userAnswer"]</p>
+}

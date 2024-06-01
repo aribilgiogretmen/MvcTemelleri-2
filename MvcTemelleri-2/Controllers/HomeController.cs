@@ -27,7 +27,7 @@ namespace MvcTemelleri_2.Controllers
         public IActionResult Person(Person model)
         {
 
-            if (ModelState.IsValid && !string.IsNullOrEmpty(model.FirstName))
+            if (!string.IsNullOrEmpty(model.FirstName))
             {
                 model.LastName = "Alpak";
                 return View("Person", model);
@@ -39,8 +39,11 @@ namespace MvcTemelleri_2.Controllers
 
         public IActionResult Index()
         {
-            
-           
+
+            ViewData["Person"] = new List<string> { "Buse", "Teoman", "Yahya" };
+
+            ViewBag.isim = "İbrahim";
+
             
             return View(new Calc());
         }
