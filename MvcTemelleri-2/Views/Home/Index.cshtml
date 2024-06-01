@@ -1,0 +1,33 @@
+﻿@model Calc
+
+<h2>Hesaplama İşlemi</h2>
+
+<form asp-action="Index" method="post">
+
+    <div class="form-group">
+
+        <label for="num1">1. Sayı:</label>
+        <input type="number" class="form-control" id="num1" name="num1" value="@Model.Num1" />
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="num2">2. Sayı:</label>
+        <input type="number" class="form-control" id="num2" name="num2" value="@Model.Num2" />
+
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+
+
+
+</form>
+
+
+@if(Model!=null)
+{
+    <div class="alert alert-success mt-3">
+        <b>Toplam: </b> @Model.Sum
+    </div>
+}
